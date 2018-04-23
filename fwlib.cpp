@@ -120,11 +120,11 @@ int * floydWarshall(int weights[][3], int from, int to)
         int v = j+1;
         if (u == from && v == to){
           array.push_back(u);
-          do
+          while(u != v)
           {
             u = next[u - 1][v - 1];
             array.push_back(u);
-          } while(u != v);
+          }
         }
       }
     }
